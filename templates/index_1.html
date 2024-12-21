@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptop Price Prediction</title>
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1 style="color:Violet;">Laptop Price Prediction</h1>
+
+    <form action="{{ url_for('predict')}}" method="post">
+
+        <!-- Dropdown for Company -->
+        <label style="color:white;" for="company">Company:</label>
+        <select name="Company" id="company" required>
+            <option value="Dell">Dell</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="HP">HP</option>
+            <option value="Asus">Asus</option>
+            <option value="Acer">Acer</option>
+        </select><br><br>
+
+        <!-- Dropdown for TypeName -->
+        <label style="color:white;" for="TypeName">TypeName:</label>
+        <select name="TypeName" id="TypeName" required>
+            <option value="Notebook">Notebook</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Ultrabook">Ultrabook</option>
+            <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+            <option value="Workstation">Workstation</option>
+        </select><br><br>
+
+        <!-- Input for Ram -->
+        <label style="color:white;" for="Ram">Ram (GB):</label>
+        <input type="text" name="Ram" id="Ram" placeholder="Enter Ram (e.g., 16)" required /><br><br>
+
+        <!-- Dropdown for Weight Category -->
+        <label style="color:white;" for="weight_category">Weight Category:</label>
+        <select name="Weight_Category" id="weight_category" required>
+            <option value="Light">Light</option>
+            <option value="Medium">Medium</option>
+            <option value="Heavy">Heavy</option>
+        </select><br><br>
+
+        <!-- Dropdown for CPU Brand -->
+        <label style="color:white;" for="cpu_brand">CPU Brand:</label>
+        <select name="Cpu_brand" id="cpu_brand" required>
+            <option value="Intel">Intel</option>
+            <option value="AMD">AMD</option>
+            <option value="Apple">Apple</option>
+        </select><br><br>
+
+        <!-- Input for HDD -->
+        <label style="color:white;" for="hdd">HDD (GB):</label>
+        <input type="text" name="HDD" id="hdd" placeholder="Enter HDD size (e.g., 1024)" required /><br><br>
+
+        <!-- Input for SSD -->
+        <label style="color:white;" for="ssd">SSD (GB):</label>
+        <input type="text" name="SSD" id="ssd" placeholder="Enter SSD size (e.g., 256)" required /><br><br>
+
+        <!-- Dropdown for GPU Brand -->
+        <label style="color:white;" for="gpu_brand">GPU Brand:</label>
+        <select name="Gpu_brand" id="gpu_brand" required>
+            <option value="Intel">Intel</option>
+            <option value="Nvidia">Nvidia</option>
+            <option value="AMD">AMD</option>
+        </select><br><br>
+
+        <!-- Dropdown for Operating System -->
+        <label style="color:white;" for="os">Operating System:</label>
+        <select name="Os" id="os" required>
+            <option value="Windows">Windows</option>
+            <option value="Linux">Linux</option>
+            <option value="MacOS">MacOS</option>
+            <option value="Chrome OS">Chrome OS</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Laptop Price</button>
+    </form>
+
+   <br><br>
+   <h4 style="color:Violet;">
+       {{ prediction_text }} 
+   </h4>
+
+ </div>
+</body>
+</html>
